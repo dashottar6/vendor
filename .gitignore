@@ -1,0 +1,6 @@
+.env
+node_modules
+bin
+.idea
+vendor.iml
+views
