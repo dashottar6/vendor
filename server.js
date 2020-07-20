@@ -2,10 +2,8 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const engines = require('consolidate');
 const mongoose = require('mongoose');
 const itemRoute = require('./routes/itemRoute');
-const cors = require('cors');
 const path = require('path');
 const shortid = require('shortid');
 
