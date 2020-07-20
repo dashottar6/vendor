@@ -3,7 +3,7 @@ var router = express.Router();
 const ItemService = require('../services/itemService')
 
 /* GET home page. */
-router.get('/addItem', function(req, res) {
+router.post('/addItem', function(req, res) {
     const item = req.body.item;
     const vendor = req.headers.vendor;
     ItemService.insertItem(item, vendor, function(err, response){
