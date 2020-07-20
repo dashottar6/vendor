@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const itemRoute = require('./routes/itemRoute');
 const path = require('path');
-const shortid = require('shortid');
+var short = require('short-uuid');
 
 const mongoPath = applicationPropertiesSingleton.VAR_DB_LUNCHBOX_CUSTOMER_REGISTERATION;
 const appPort = 3000;
@@ -19,16 +19,13 @@ mongoose.set('debug', true);
 app.use(bodyParser.json());
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb' }));
-app.engine("html", engines.nunjucks);
 app.set("view engine", "html");
 app.use(bodyParser.json());
 
 // // Routes
-// app.use(appContextPath + '/customers', customerRoute);
-// app.use(appContextPath + '/legals', legalsRoute);
+app.use('flooid/cart', itemRoute);
 
 
-// Exception Handling
 
 // Run Server
 const server = app.listen(appPort, function () {
